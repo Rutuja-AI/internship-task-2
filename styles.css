@@ -1,0 +1,158 @@
+/* General Reset */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden; /* Prevent scrolling due to animations */
+  background: linear-gradient(135deg, #2e3a59, #1e2731);
+  color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Stopwatch container */
+.stopwatch-container {
+  position: relative;
+  z-index: 10; /* Keep stopwatch above the background */
+  background: rgba(0, 0, 0, 0.8);
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.6);
+}
+
+/* Title */
+h1 {
+  margin: 0 0 1rem;
+  font-size: 2.5rem;
+  color: #f0e68c;
+}
+
+/* Time display */
+.time-display {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.1em;
+  color: #64ffda;
+}
+
+/* Controls */
+.controls button {
+  font-size: 1.2rem;
+  padding: 0.6rem 1.2rem;
+  margin: 0.5rem;
+  border: none;
+  border-radius: 8px;
+  background: #ff4081;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.controls button:hover {
+  background: #f50057;
+}
+
+.controls button:disabled {
+  background: #9e9e9e;
+  cursor: not-allowed;
+}
+
+/* Laps container */
+.laps-container {
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.laps-container h2 {
+  margin-bottom: 1rem;
+  color: #ff5722;
+}
+
+#laps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#laps li {
+  background: #333;
+  padding: 0.6rem;
+  margin-bottom: 0.5rem;
+  border-radius: 6px;
+  color: #ffcc00;
+}
+
+/* 3D Background Effects */
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+  perspective: 1200px; /* Adds 3D depth */
+}
+
+.shape {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(45deg, #ff6347, #3dffeb);
+  border-radius: 50%;
+  animation: float 10s ease-in-out infinite, rotate 6s linear infinite;
+  mix-blend-mode: lighten;
+  box-shadow: 0px 8px 30px rgba(255, 255, 255, 0.3);
+}
+
+/* Random positions and animations */
+.shape:nth-child(1) {
+  top: 15%;
+  left: 10%;
+  animation-delay: 0s, -2s;
+}
+
+.shape:nth-child(2) {
+  top: 60%;
+  left: 70%;
+  animation-delay: 1s, -3s;
+}
+
+.shape:nth-child(3) {
+  top: 30%;
+  left: 40%;
+  animation-delay: 2s, -4s;
+}
+
+.shape:nth-child(4) {
+  top: 70%;
+  left: 80%;
+  animation-delay: 3s, -5s;
+}
+
+.shape:nth-child(5) {
+  top: 85%;
+  left: 20%;
+  animation-delay: 4s, -6s;
+}
+
+/* Keyframe animations */
+@keyframes float {
+  0%, 100% {
+      transform: translateZ(0px) scale(1);
+  }
+  50% {
+      transform: translateZ(150px) scale(1.3);
+  }
+}
+
+@keyframes rotate {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(720deg);
+  }
+}
